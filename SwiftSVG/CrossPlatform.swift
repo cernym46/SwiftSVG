@@ -30,7 +30,7 @@
 
 import Foundation
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
     import UIKit
 #elseif os(OSX)
     import AppKit
@@ -41,7 +41,7 @@ import Foundation
 
 extension UIView {
     var nonOptionalLayer:CALayer {
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
             return self.layer
         #elseif os(OSX)
             if let thisLayer = self.layer {

@@ -29,7 +29,7 @@
 
 
 import Foundation
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 #elseif os(OSX)
 import AppKit
@@ -53,7 +53,7 @@ public extension UIView {
         let svgLayer = SVGLayer()
         let pathPath = UIBezierPath(pathString: pathString)
         svgLayer.path = pathPath.cgPath
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         self.layer.addSublayer(svgLayer)
         #elseif os(OSX)
         self.nonOptionalLayer.addSublayer(svgLayer)

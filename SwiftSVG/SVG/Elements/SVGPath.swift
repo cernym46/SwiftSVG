@@ -28,7 +28,7 @@
 
 
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
     import UIKit
 #elseif os(OSX)
     import AppKit
@@ -125,7 +125,7 @@ final class SVGPath: SVGShapeElement, ParsesAsynchronously, DelaysApplyingAttrib
         guard clipRule == "evenodd" else {
             return
         }
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         let bezierPath = UIBezierPath(cgPath: thisPath)
         bezierPath.usesEvenOddFillRule = true
         self.svgLayer.path = bezierPath.cgPath

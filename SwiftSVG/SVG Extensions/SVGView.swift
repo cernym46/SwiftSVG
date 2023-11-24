@@ -28,7 +28,7 @@
 
 
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
     import UIKit
 #elseif os(OSX)
     import AppKit
@@ -72,7 +72,7 @@ open class SVGView : UIView {
                     self?.nonOptionalLayer.addSublayer(svgLayer)
                 }
             } else if #available(iOS 9.0, tvOS 9.0, OSX 10.11, *) {
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                 guard let asset = NSDataAsset(name: thisName, bundle: bundle) else {
                     return
                 }
